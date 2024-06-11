@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:semeotic_shots_portfolio/screens/home_page.dart';
+import 'package:semeotic_shots_portfolio/home_page/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
