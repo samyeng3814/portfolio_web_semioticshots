@@ -114,8 +114,8 @@ class _BabyPhotographySectionState extends State<BabyPhotographySection> {
                           size: Responsive.isMobile(context)
                               ? 12
                               : Responsive.isTablet(context)
-                                  ? 16
-                                  : 24,
+                                  ? 14
+                                  : 20,
                           color: AppColors.appWhiteColor,
                         ),
                       ),
@@ -143,7 +143,7 @@ class _BabyPhotographySectionState extends State<BabyPhotographySection> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(42).copyWith(right: 0),
+                  padding: const EdgeInsets.all(42).copyWith(left: 0),
                   child: Row(
                     children: [
                       Expanded(

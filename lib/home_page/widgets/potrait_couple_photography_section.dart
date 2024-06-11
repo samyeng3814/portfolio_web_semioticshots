@@ -111,11 +111,11 @@ class _PotraitAndCouplePhotographySectionState extends State<PotraitAndCouplePho
                         ),
                         child: PrimaryText(
                           text: 'Gallery',
-                          size: Responsive.isMobile(context)
+                         size: Responsive.isMobile(context)
                               ? 12
                               : Responsive.isTablet(context)
-                                  ? 16
-                                  : 24,
+                                  ? 14
+                                  : 20,
                           color: AppColors.appWhiteColor,
                         ),
                       ),
@@ -143,7 +143,7 @@ class _PotraitAndCouplePhotographySectionState extends State<PotraitAndCouplePho
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(42).copyWith(right: 0),
+                  padding: const EdgeInsets.all(42).copyWith(left: 0),
                   child: Row(
                     children: [
                       Expanded(

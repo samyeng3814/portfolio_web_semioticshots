@@ -170,8 +170,8 @@ class _ArchitecturalSectionState extends State<ArchitecturalSection> {
                           size: Responsive.isMobile(context)
                               ? 12
                               : Responsive.isTablet(context)
-                                  ? 16
-                                  : 24,
+                                  ? 14
+                                  : 20,
                           color: AppColors.appWhiteColor,
                         ),
                       ),
