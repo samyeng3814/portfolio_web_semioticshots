@@ -48,70 +48,92 @@ class _ContactDetailSectionState extends State<ContactDetailSection> {
           ),
           Padding(
             padding: const EdgeInsets.all(42),
-            child: Expanded(
-              child: Container(
-                width: w * 0.8,
-                padding: const EdgeInsets.all(48),
-                decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.secondaryColor, width: 1),
-                  color: AppColors.appWhiteColor,
-                ),
-                child: Row(
-                  children: [
-                    const Expanded(
-                      child: SizedBox(),
+            child: Container(
+              width: w * 0.8,
+              padding: const EdgeInsets.all(48),
+              decoration: BoxDecoration(
+                border: Border.all(color: AppColors.secondaryColor, width: 1),
+                color: AppColors.appWhiteColor,
+              ),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: SizedBox(),
+                  ),
+                  Expanded(
+                    flex: 4,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Image.asset('assets/images/vj_img.png'),
+                        ),
+                      ],
                     ),
-                    Expanded(
-                      flex: 4,
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Image.asset('assets/images/vj_img.png'),
-                          ),
-                        ],
-                      ),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            PrimaryText(
+                              text: 'Phone: ',
+                              size: Responsive.isExtraLargeScreen(context)
+                                  ? 20
+                                  : Responsive.isDesktop(context)
+                                      ? 16
+                                      : Responsive.isTablet(context)
+                                          ? 14
+                                          : 12,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            PrimaryText(
+                              text: '8270447605',
+                              size: Responsive.isExtraLargeScreen(context)
+                                  ? 20
+                                  : Responsive.isDesktop(context)
+                                      ? 16
+                                      : Responsive.isTablet(context)
+                                          ? 14
+                                          : 12,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 12,
+                        ),
+                        Row(
+                          children: [
+                            PrimaryText(
+                              text: 'Email: ',
+                              size: Responsive.isExtraLargeScreen(context)
+                                  ? 20
+                                  : Responsive.isDesktop(context)
+                                      ? 16
+                                      : Responsive.isTablet(context)
+                                          ? 14
+                                          : 12,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            PrimaryText(
+                              text: 'vijaysankar1910@gmail.com',
+                              size: Responsive.isExtraLargeScreen(context)
+                                  ? 20
+                                  : Responsive.isDesktop(context)
+                                      ? 16
+                                      : Responsive.isTablet(context)
+                                          ? 14
+                                          : 12,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    const Expanded(
-                      flex: 3,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                            children: [
-                              PrimaryText(
-                                text: 'Phone: ',
-                                size: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              PrimaryText(
-                                text: '8270447605',
-                                size: 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          Row(
-                            children: [
-                              PrimaryText(
-                                text: 'Email: ',
-                                size: 16,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              PrimaryText(
-                                text: 'vijaysankar1910@gmail.com',
-                                size: 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

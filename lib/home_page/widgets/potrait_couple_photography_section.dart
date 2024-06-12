@@ -7,18 +7,24 @@ class PotraitAndCouplePhotographySection extends StatefulWidget {
   const PotraitAndCouplePhotographySection({super.key});
 
   @override
-  State<PotraitAndCouplePhotographySection> createState() => _PotraitAndCouplePhotographySectionState();
+  State<PotraitAndCouplePhotographySection> createState() =>
+      _PotraitAndCouplePhotographySectionState();
 }
 
-class _PotraitAndCouplePhotographySectionState extends State<PotraitAndCouplePhotographySection> {
+class _PotraitAndCouplePhotographySectionState
+    extends State<PotraitAndCouplePhotographySection> {
   @override
   Widget build(BuildContext context) {
+    var h = MediaQuery.of(context).size.height;
+
     return SizedBox(
-      height: Responsive.isMobile(context)
-          ? 280
-          : Responsive.isTablet(context)
-              ? 480
-              : 640,
+      height: Responsive.isExtraLargeScreen(context)
+          ? 640
+          : Responsive.isDesktop(context)
+              ? 520
+              : Responsive.isTablet(context)
+                  ? 480
+                  : 280,
       child: Row(
         children: [
           Expanded(
@@ -26,8 +32,8 @@ class _PotraitAndCouplePhotographySectionState extends State<PotraitAndCouplePho
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 112,
+                SizedBox(
+                  height: h * 0.1,
                 ),
                 const Row(
                   children: [
@@ -43,8 +49,8 @@ class _PotraitAndCouplePhotographySectionState extends State<PotraitAndCouplePho
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 56,
+                SizedBox(
+                  height: h * 0.06,
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
@@ -59,11 +65,13 @@ class _PotraitAndCouplePhotographySectionState extends State<PotraitAndCouplePho
                     children: [
                       PrimaryText(
                         text: "Portrait & couple Photography",
-                        size: Responsive.isMobile(context)
-                            ? 18
-                            : Responsive.isTablet(context)
-                                ? 26
-                                : 36,
+                        size: Responsive.isExtraLargeScreen(context)
+                            ? 36
+                            : Responsive.isDesktop(context)
+                                ? 28
+                                : Responsive.isTablet(context)
+                                    ? 26
+                                    : 16,
                         fontWeight: FontWeight.w500,
                         textAlign: TextAlign.center,
                       ),
@@ -73,11 +81,13 @@ class _PotraitAndCouplePhotographySectionState extends State<PotraitAndCouplePho
                       PrimaryText(
                         text:
                             'We’ll explore the art and techniques behind capturing the beauty of your love.',
-                        size: Responsive.isMobile(context)
-                            ? 14
-                            : Responsive.isTablet(context)
+                        size: Responsive.isExtraLargeScreen(context)
+                            ? 24
+                            : Responsive.isDesktop(context)
                                 ? 18
-                                : 24,
+                                : Responsive.isTablet(context)
+                                    ? 16
+                                    : 12,
                         textAlign: TextAlign.center,
                         fontWeight: FontWeight.w400,
                       ),
@@ -111,11 +121,13 @@ class _PotraitAndCouplePhotographySectionState extends State<PotraitAndCouplePho
                         ),
                         child: PrimaryText(
                           text: 'Gallery',
-                         size: Responsive.isMobile(context)
-                              ? 12
-                              : Responsive.isTablet(context)
-                                  ? 14
-                                  : 20,
+                          size: Responsive.isExtraLargeScreen(context)
+                              ? 20
+                              : Responsive.isDesktop(context)
+                                  ? 18
+                                  : Responsive.isTablet(context)
+                                      ? 14
+                                      : 12,
                           color: AppColors.appWhiteColor,
                         ),
                       ),
@@ -131,8 +143,28 @@ class _PotraitAndCouplePhotographySectionState extends State<PotraitAndCouplePho
               children: [
                 Row(
                   children: [
-                    const Expanded(
-                      child: SizedBox(),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: h * 0.1,
+                          ),
+                          const Row(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: Divider(
+                                  color: AppColors.secondaryColor,
+                                  thickness: 1,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: h * 0.06,
+                          ),
+                        ],
+                      ),
                     ),
                     Expanded(
                       flex: 2,
@@ -145,16 +177,18 @@ class _PotraitAndCouplePhotographySectionState extends State<PotraitAndCouplePho
                 Padding(
                   padding: const EdgeInsets.all(42).copyWith(left: 0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Expanded(
-                        flex: 4,
+                      Flexible(
                         child: Image.asset(
                           'assets/images/couple_img_1.png',
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover,
                         ),
                       ),
-                      Expanded(
-                        flex: 5,
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Flexible(
                         child: Column(
                           children: [
                             Expanded(

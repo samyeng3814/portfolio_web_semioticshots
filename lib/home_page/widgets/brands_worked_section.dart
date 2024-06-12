@@ -39,9 +39,9 @@ class _BrandsWorkedSectionState extends State<BrandsWorkedSection> {
               vertical: Responsive.isMobile(context)
                   ? 26
                   : Responsive.isTablet(context)
-                      ? 38
+                      ? 28
                       : 28,
-            ),
+            ).copyWith(bottom: 0),
             child: Row(
               children: [
                 const Expanded(
@@ -69,20 +69,24 @@ class _BrandsWorkedSectionState extends State<BrandsWorkedSection> {
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: List.generate(
-              brandsList.length,
-              (index) {
-                return SizedBox(
-                  width: 160,
-                  height: 160,
-                  child: Image.asset(
-                    'assets/images/${brandsList[index]}',
-                    fit: BoxFit.contain,
-                  ),
-                );
-              },
+          SizedBox(
+            height: 160,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: List.generate(
+                brandsList.length,
+                (index) {
+                  return Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Image.asset(
+                        'assets/images/${brandsList[index]}',
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
           )
         ],

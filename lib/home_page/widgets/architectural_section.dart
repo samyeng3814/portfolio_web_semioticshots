@@ -13,15 +13,18 @@ class ArchitecturalSection extends StatefulWidget {
 class _ArchitecturalSectionState extends State<ArchitecturalSection> {
   @override
   Widget build(BuildContext context) {
+    var h = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: Responsive.isMobile(context)
-          ? 280
-          : Responsive.isTablet(context)
-              ? 480
-              : 640,
+      height: Responsive.isExtraLargeScreen(context)
+          ? 640
+          : Responsive.isDesktop(context)
+              ? 520
+              : Responsive.isTablet(context)
+                  ? 480
+                  : 280,
       child: Row(
         children: [
-          Expanded(
+          Flexible(
             flex: 3,
             child: Stack(
               children: [
@@ -33,8 +36,28 @@ class _ArchitecturalSectionState extends State<ArchitecturalSection> {
                         color: AppColors.primaryColor,
                       ),
                     ),
-                    const Expanded(
-                      child: SizedBox(),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: h * 0.1,
+                          ),
+                          const Row(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: Divider(
+                                  color: AppColors.secondaryColor,
+                                  thickness: 1,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: h * 0.06,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -42,8 +65,7 @@ class _ArchitecturalSectionState extends State<ArchitecturalSection> {
                   padding: const EdgeInsets.all(42).copyWith(right: 0),
                   child: Row(
                     children: [
-                      Expanded(
-                        flex: 5,
+                      Flexible(
                         child: Column(
                           children: [
                             Expanded(
@@ -64,11 +86,13 @@ class _ArchitecturalSectionState extends State<ArchitecturalSection> {
                           ],
                         ),
                       ),
-                      Expanded(
-                        flex: 4,
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Flexible(
                         child: Image.asset(
                           'assets/images/architecture_1.png',
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ],
@@ -77,13 +101,13 @@ class _ArchitecturalSectionState extends State<ArchitecturalSection> {
               ],
             ),
           ),
-          Expanded(
+          Flexible(
             flex: 2,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 112,
+                SizedBox(
+                  height: h * 0.1,
                 ),
                 const Row(
                   children: [
@@ -99,8 +123,8 @@ class _ArchitecturalSectionState extends State<ArchitecturalSection> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 56,
+                SizedBox(
+                  height: h * 0.06,
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
@@ -115,11 +139,13 @@ class _ArchitecturalSectionState extends State<ArchitecturalSection> {
                     children: [
                       PrimaryText(
                         text: "Architectural Photography",
-                        size: Responsive.isMobile(context)
-                            ? 18
-                            : Responsive.isTablet(context)
-                                ? 26
-                                : 36,
+                        size: Responsive.isExtraLargeScreen(context)
+                            ? 36
+                            : Responsive.isDesktop(context)
+                                ? 28
+                                : Responsive.isTablet(context)
+                                    ? 26
+                                    : 16,
                         fontWeight: FontWeight.w500,
                         textAlign: TextAlign.center,
                       ),
@@ -129,11 +155,13 @@ class _ArchitecturalSectionState extends State<ArchitecturalSection> {
                       PrimaryText(
                         text:
                             'We’ll explore the art and techniques behind capturing the beauty of architectural wonders through the lens of a camera.',
-                        size: Responsive.isMobile(context)
-                            ? 14
-                            : Responsive.isTablet(context)
+                        size: Responsive.isExtraLargeScreen(context)
+                            ? 24
+                            : Responsive.isDesktop(context)
                                 ? 18
-                                : 24,
+                                : Responsive.isTablet(context)
+                                    ? 16
+                                    : 12,
                         textAlign: TextAlign.center,
                         fontWeight: FontWeight.w400,
                       ),
@@ -167,11 +195,13 @@ class _ArchitecturalSectionState extends State<ArchitecturalSection> {
                         ),
                         child: PrimaryText(
                           text: 'Gallery',
-                          size: Responsive.isMobile(context)
-                              ? 12
-                              : Responsive.isTablet(context)
-                                  ? 14
-                                  : 20,
+                          size: Responsive.isExtraLargeScreen(context)
+                              ? 20
+                              : Responsive.isDesktop(context)
+                                  ? 18
+                                  : Responsive.isTablet(context)
+                                      ? 14
+                                      : 12,
                           color: AppColors.appWhiteColor,
                         ),
                       ),
