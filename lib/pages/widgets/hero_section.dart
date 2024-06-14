@@ -20,9 +20,11 @@ class _HeroSectionState extends State<HeroSection> {
         Container(
           height: Responsive.isMobile(context)
               ? 280
-              : Responsive.isTablet(context)
-                  ? 480
-                  : 640,
+              : w < 960
+                  ? 380
+                  : Responsive.isTablet(context)
+                      ? 480
+                      : 640,
           width: w,
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -34,9 +36,11 @@ class _HeroSectionState extends State<HeroSection> {
         Container(
           height: Responsive.isMobile(context)
               ? 280
-              : Responsive.isTablet(context)
-                  ? 480
-                  : 640,
+              : w < 960
+                  ? 380
+                  : Responsive.isTablet(context)
+                      ? 480
+                      : 640,
           width: w,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -67,14 +71,18 @@ class _HeroSectionState extends State<HeroSection> {
                     SizedBox(
                       height: Responsive.isMobile(context)
                           ? 36
-                          : Responsive.isTablet(context)
-                              ? 64
-                              : 96,
+                          : w < 960
+                              ? 58
+                              : Responsive.isTablet(context)
+                                  ? 64
+                                  : 96,
                       width: Responsive.isMobile(context)
                           ? 18
-                          : Responsive.isTablet(context)
-                              ? 32
-                              : 48,
+                          : w < 960
+                              ? 29
+                              : Responsive.isTablet(context)
+                                  ? 32
+                                  : 48,
                       child: Image.asset(
                         'assets/images/semiotic_logo.png',
                         fit: BoxFit.cover,
@@ -135,9 +143,11 @@ class _HeroSectionState extends State<HeroSection> {
                             text: "WHERE PIXELS",
                             size: Responsive.isMobile(context)
                                 ? 28
-                                : Responsive.isTablet(context)
-                                    ? 56
-                                    : 96,
+                                : w < 960
+                                    ? 48
+                                    : Responsive.isTablet(context)
+                                        ? 56
+                                        : 96,
                             fontWeight: FontWeight.w500,
                           ),
                           PrimaryText(
@@ -145,9 +155,11 @@ class _HeroSectionState extends State<HeroSection> {
                             fontFamily: 'Cinzel Decorative',
                             size: Responsive.isMobile(context)
                                 ? 22
-                                : Responsive.isTablet(context)
-                                    ? 44
-                                    : 64,
+                                : w < 960
+                                    ? 38
+                                    : Responsive.isTablet(context)
+                                        ? 44
+                                        : 64,
                             fontWeight: FontWeight.w500,
                           ),
                         ],

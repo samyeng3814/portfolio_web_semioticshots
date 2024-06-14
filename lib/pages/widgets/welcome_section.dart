@@ -18,10 +18,12 @@ class _WelcomeSectionState extends State<WelcomeSection> {
       padding: EdgeInsets.symmetric(
         horizontal: w * 0.08,
         vertical: Responsive.isMobile(context)
-            ? 26
-            : Responsive.isTablet(context)
-                ? 38
-                : 56,
+            ? 24
+            : w < 960
+                ? 32
+                : Responsive.isTablet(context)
+                    ? 38
+                    : 56,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,10 +31,12 @@ class _WelcomeSectionState extends State<WelcomeSection> {
           PrimaryText(
             text: "Semioticshots",
             size: Responsive.isMobile(context)
-                ? 28
-                : Responsive.isTablet(context)
-                    ? 36
-                    : 48,
+                ? 24
+                : Responsive.isLargeMobile(context)
+                    ? 26
+                    : Responsive.isTablet(context)
+                        ? 36
+                        : 48,
             fontWeight: FontWeight.w600,
           ),
           PrimaryText(
@@ -40,9 +44,11 @@ class _WelcomeSectionState extends State<WelcomeSection> {
             fontFamily: 'Cinzel',
             size: Responsive.isMobile(context)
                 ? 14
-                : Responsive.isTablet(context)
+                : Responsive.isLargeMobile(context)
                     ? 18
-                    : 22,
+                    : Responsive.isTablet(context)
+                        ? 18
+                        : 22,
             fontWeight: FontWeight.w400,
           ),
           const SizedBox(
@@ -53,9 +59,11 @@ class _WelcomeSectionState extends State<WelcomeSection> {
                 'Welcome to semioticshots by Vijaykumar. I am a professional architectural , event, travel &  portrait photographer. I\'ve honed my craft to evoke emotions and tell stories through my lens. Each click is an opportunity to freeze a fleeting moment, creating timeless memories for you to cherish. Lets collaborate to capture your vision beautifully.',
             size: Responsive.isMobile(context)
                 ? 14
-                : Responsive.isTablet(context)
+                : Responsive.isLargeMobile(context)
                     ? 16
-                    : 18,
+                    : Responsive.isTablet(context)
+                        ? 16
+                        : 18,
             fontWeight: FontWeight.w400,
             textAlign: TextAlign.center,
           ),
